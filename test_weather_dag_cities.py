@@ -1,6 +1,6 @@
 from datetime import datetime
 from airflow import DAG
-from operators import CurrencyWeatherOperator
+from operators import WeatherToCSVOperator
 
 # Список городов для получения погоды
 cities = ["Moscow", "Paris", "Berlin"]
@@ -15,7 +15,7 @@ with DAG(
 
     # Создаем задачу для каждого города
     for city in cities:
-        weather_task = CurrencyWeatherOperator(
+        weather_task = WeatherToCSVOperator(
             task_id=f"save_{city.lower()}_weather",
             city=city,
             file_path=f'/opt/airflow/data/tmp/{city.lower()}_weather.csv',

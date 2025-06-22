@@ -17,7 +17,7 @@ dags/
 
 ## Компоненты
 
-### 1. CurrencyWeatherHook
+### 1. WeatherAPIHook
 
 Собственный Hook для взаимодействия с Weather API.
 
@@ -28,13 +28,13 @@ dags/
 
 **Пример использования:**
 ```python
-from hooks import CurrencyWeatherHook
-hook = CurrencyWeatherHook(currency_conn_id='weather_api')
+from hooks import WeatherAPIHook
+hook = WeatherAPIHook(currency_conn_id='weather_api')
 result = hook.get_weather_data(city=city)
 # Результат: {'temp_c': 14.4, 'condition': 'Partly Cloudy'}
 ```
 
-### 2. CurrencyWeatherOperator
+### 2. WeatherToCSVOperator
 
 Operator для получения данных о погоде и сохранения их в CSV через pandas DataFrame.
 
@@ -45,9 +45,9 @@ Operator для получения данных о погоде и сохран�
 
 **Пример использования:**
 ```python
-from operators import CurrencyWeatherOperator
+from operators import WeatherToCSVOperator
 
-weather_task = CurrencyWeatherOperator(
+weather_task = WeatherToCSVOperator(
     task_id="save_moscow_weather",
     city='Moscow',
     file_path='/opt/airflow/data/tmp/moscow_weather.csv',

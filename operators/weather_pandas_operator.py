@@ -8,9 +8,9 @@ from airflow.models.baseoperator import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 
-from hooks import CurrencyWeatherHook
+from hooks import WeatherAPIHook
 
-class CurrencyWeatherOperator(BaseOperator):
+class WeatherToCSVOperator(BaseOperator):
     """
     Оператор для получения данных о погоде и сохранения их в CSV через Pandas
     
@@ -47,7 +47,7 @@ class CurrencyWeatherOperator(BaseOperator):
         
         # 1. Получаем данные о погоде через Hook
         
-        weather_hook = CurrencyWeatherHook(currency_conn_id=self.conn_id)
+        weather_hook = WeatherAPIHook(currency_conn_id=self.conn_id)
         weather_data = weather_hook.get_weather_data(city=self.city)
         
         logging.info(f"Получены данные о погоде: {weather_data}")

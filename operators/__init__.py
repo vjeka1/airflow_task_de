@@ -2,10 +2,10 @@
 Оператор для обработки данных
 """
 
-from .weather_pandas_operator import CurrencyWeatherOperator
+from .weather_pandas_operator import WeatherToCSVOperator
 
 __all__ = [
-    'CurrencyWeatherOperator'
+    'WeatherToCSVOperator'
 ]
 
 __version__ = '1.0.0'

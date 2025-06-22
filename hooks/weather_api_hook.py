@@ -3,7 +3,7 @@ from airflow.exceptions import AirflowException
 from airflow.hooks.base import BaseHook
 import logging
 
-class CurrencyWeatherHook(BaseHook):
+class WeatherAPIHook(BaseHook):
     def __init__(self, currency_conn_id: str):
         super().__init__()
         self.conn_id = currency_conn_id

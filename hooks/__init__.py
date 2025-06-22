@@ -2,10 +2,10 @@
 Hooks для работы с внешними API
 """
 
-from .weather_api_hook import CurrencyWeatherHook
+from .weather_api_hook import WeatherAPIHook
 
 __all__ = [
-    'CurrencyWeatherHook'
+    'WeatherAPIHook'
 ]
 
 __version__ = '1.0.0'
