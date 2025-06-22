@@ -3,7 +3,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 # Импорт вашего хука
-from hooks.CurrencyWeatherHook import CurrencyWeatherHook
+from hooks.weather_api_hook import CurrencyWeatherHook
     
 def get_weather(city='Moscow'):
     """Получение погоды"""
@@ -19,7 +19,7 @@ def get_weather(city='Moscow'):
 
 
 with DAG(
-    'weather',
+    'test_weather_dag_hook',
     schedule_interval=None,  # Ручной запуск
     start_date=datetime(2025, 6, 20)  
 ) as dag:
