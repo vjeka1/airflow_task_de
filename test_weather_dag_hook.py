@@ -3,7 +3,7 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 
 # Импорт вашего хука
-from hooks.weather_api_hook import CurrencyWeatherHook
+from hooks import CurrencyWeatherHook
     
 def get_weather(city='Moscow'):
     """Получение погоды"""

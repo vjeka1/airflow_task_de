@@ -1,6 +1,6 @@
 from datetime import datetime
 from airflow import DAG
-from operators.weather_pandas_operator import CurrencyWeatherOperator
+from operators import CurrencyWeatherOperator
 
 # Список городов для получения погоды
 cities = ["Moscow", "Paris", "Berlin"]

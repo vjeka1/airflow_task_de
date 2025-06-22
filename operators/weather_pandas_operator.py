@@ -8,7 +8,7 @@ from airflow.models.baseoperator import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
 
-from hooks.weather_api_hook import CurrencyWeatherHook
+from hooks import CurrencyWeatherHook
 
 class CurrencyWeatherOperator(BaseOperator):
     """
