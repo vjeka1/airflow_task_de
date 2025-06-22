@@ -12,7 +12,7 @@ dags/
 ├── operators/
 │   ├── __init__.py
 │   └── weather_pandas_operator.py   # Operator для работы с pandas DataFrame
-└── test_weather_dag_cities.py       # Отдельный тест городов (опционально)
+└── test_weather_dag_cities.py       # Тестовый DAG для проверки Hook и Operator
 ```
 
 ## Компоненты
